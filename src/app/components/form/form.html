@@ -1,1 +1,52 @@
-<p>form works!</p>
+<form class="row g-3">
+  <div class="col-lg-12">
+    <label class="visually-hidden" for="specificSizeInputGroupControlNumber">Control Number</label>
+    <div class="input-group">
+      <div class="input-group-text">
+        <i class="bi bi-person-badge"></i>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="specificSizeInputGroupControlNumber"
+        placeholder="Control Number"
+      />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="inputName4" class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputName4" placeholder="Juan" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputLastName4" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="inputLastName4" placeholder="Pérez" />
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <label for="inputGrade" class="form-label">Grade</label>
+      <input type="text" class="form-control" id="inputGrade" placeholder="8" />
+    </div>
+    <div class="col-4">
+      <label for="inputGroup" class="form-label">Group</label>
+      <input type="text" class="form-control" id="inputGroup" placeholder="G1VSIS00" />
+    </div>
+    <div class="col-4">
+      <label for="inputAverage" class="form-label">Average</label>
+      <input type="text" class="form-control" id="inputAverage" placeholder="90" />
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-3">
+    <button type="submit" class="btn btn-success d-flex flex-column align-items-center">
+      <i class="bi bi-person-plus-fill fs-4"></i>
+      <span>New Student</span>
+    </button>    
+  </div>
+    <div class="col-3">
+    <button type="submit" class="btn btn-primary d-flex flex-column align-items-center">
+      <i class="bi bi-pencil-square fs-4"></i>
+      <span>Edit Student</span>
+    </button>
+    </div>
+  </div>
+</form>
