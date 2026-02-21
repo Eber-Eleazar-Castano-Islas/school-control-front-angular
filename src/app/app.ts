@@ -7,7 +7,7 @@ import { Table } from './components/table/table';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, Form, Table],
+  imports: [Navbar, Form, Table],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
