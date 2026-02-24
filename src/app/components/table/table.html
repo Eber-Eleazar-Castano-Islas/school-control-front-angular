@@ -1,38 +1,39 @@
 <table class="table table-striped-columns table-secondary">
   <thead class="table-light">
     <tr>
-      <th scope="col">Control Number</th>
-      <th scope="col">Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Grade</th>
-      <th scope="col">Group</th>
-      <th scope="col">Average</th>
+      <th scope="col" class="text-center">Control Number</th>
+      <th scope="col" class="text-center">Name</th>
+      <th scope="col" class="text-center">Last Name</th>
+      <th scope="col" class="text-center">Grade</th>
+      <th scope="col" class="text-center">Group</th>
+      <th scope="col" class="text-center">Average</th>
+      <th scope="col" class="text-center">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@social</td>
-      <td>@social</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@social</td>
-      <td>@social</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-      <td>@social</td>
-      <td>@social</td>
+    <tr *ngFor="let student of students">
+      <th scope="row">{{ student.student_id }}</th>
+      <td>{{ student.name }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.grade }}</td>
+      <td>{{ student.group }}</td>
+      <td>{{ student.average }}</td>
+      <td>
+        <div class="row">
+          <div class="col">
+            <button type="submit" class="btn btn-warning d-flex flex-column">
+              <i class="bi bi-pencil-square"></i>
+              <span>Edit</span>
+            </button>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-danger d-flex flex-column">
+              <i class="bi bi-person-x-fill"></i>
+              <span>Delete</span>
+            </button>
+          </div>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
