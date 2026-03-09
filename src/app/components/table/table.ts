@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { NgFor} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { Student } from '../../models/student.model';
+import { StudentService } from '../../services/student.service';
 
 @Component({
   selector: 'app-table',
@@ -8,10 +10,26 @@ import { NgFor} from '@angular/common';
   templateUrl: './table.html',
   styleUrls: ['./table.css'],
 })
-export class Table {
-    students = [
-      { student_id: "D22390074", name: "John", lastName: "Doe", grade: "10th", group: "A", average: 85 },
-      { student_id: "D22390075", name: "Jane", lastName: "Smith", grade: "11th", group: "B", average: 92 },
-      { student_id: "D22390076", name: "Bob", lastName: "Johnson", grade: "9th", group: "C", average: 78 }
-    ];
+export class Table implements OnInit {
+  students: Student[] = [];
+
+  constructor(private studentService: StudentService) {}
+
+  ngOnInit(): void {
+    this.loadStudents();
+    this.studentService.created$.subscribe((s) => {
+      this.students.push(s);
+    });
+  }
+
+  // Método para cargar los estudiantes desde el servicio
+  loadStudents(): void {
+    this.studentService.getStudents().subscribe({
+      next: (data) => {
+        this.students = data;
+        console.log('Estudiantes', this.students);
+      },
+      error: (err) => console.error('Error al cargar estudiantes', err),
+    });
+  }
 }

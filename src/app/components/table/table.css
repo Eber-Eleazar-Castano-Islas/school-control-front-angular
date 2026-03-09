@@ -1,0 +1,11 @@
+.custom-table {
+  width: auto;
+  table-layout: auto;
+}
+
+.custom-table th,
+.custom-table td {
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+}

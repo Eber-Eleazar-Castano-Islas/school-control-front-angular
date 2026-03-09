@@ -1,4 +1,4 @@
-<table class="table table-striped-columns table-secondary">
+<table class="table table-striped-columns table-secondary w-auto custom-table">
   <thead class="table-light">
     <tr>
       <th scope="col" class="text-center">Control Number</th>
@@ -10,28 +10,29 @@
       <th scope="col" class="text-center">Actions</th>
     </tr>
   </thead>
+
   <tbody>
     <tr *ngFor="let student of students">
       <th scope="row">{{ student.student_id }}</th>
       <td>{{ student.name }}</td>
-      <td>{{ student.lastName }}</td>
+      <td>{{ student.lastname }}</td>
       <td>{{ student.grade }}</td>
       <td>{{ student.group }}</td>
       <td>{{ student.average }}</td>
+
       <td>
-        <div class="row">
-          <div class="col">
-            <button type="submit" class="btn btn-warning d-flex flex-column">
-              <i class="bi bi-pencil-square"></i>
-              <span>Edit</span>
-            </button>
-          </div>
-          <div class="col">
-            <button type="submit" class="btn btn-danger d-flex flex-column">
-              <i class="bi bi-person-x-fill"></i>
-              <span>Delete</span>
-            </button>
-          </div>
+        <div class="d-flex justify-content-center gap-2">
+
+          <button type="button" class="btn btn-warning d-flex flex-column align-items-center">
+            <i class="bi bi-pencil-square"></i>
+            <span>Edit</span>
+          </button>
+
+          <button type="button" class="btn btn-danger d-flex flex-column align-items-center">
+            <i class="bi bi-person-x-fill"></i>
+            <span>Delete</span>
+          </button>
+
         </div>
       </td>
     </tr>
